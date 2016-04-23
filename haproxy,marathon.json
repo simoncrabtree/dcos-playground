@@ -1,0 +1,37 @@
+{
+  "id": "haproxy",
+  "cmd": null,
+  "cpus": 0.1,
+  "mem": 32,
+  "disk": 0,
+  "instances": 1,
+  "acceptedResourceRoles": [
+    "slave_public"
+  ],
+  "container": {
+    "docker": {
+      "image": "sargun/haproxy-demo:3",
+      "network": "HOST",
+      "parameters": []
+    },
+    "type": "DOCKER",
+    "volumes": []
+  },
+  "env": {
+    "CONFIGURL": "https://github.com/simoncrabtree/dcos-playground/blob/master/haproxy.txt"
+  },
+  "ports": [
+    80
+  ],
+  "requirePorts": true,
+  "portDefinitions": [
+    {
+      "port": 0,
+      "protocol": "tcp",
+      "name": null,
+      "labels": null
+    }
+  ],
+  "labels": {},
+  "healthChecks": []
+}
