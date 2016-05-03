@@ -1,0 +1,25 @@
+{
+  "id": "/sayhello",
+  "cmd": "chmod 755 linux-amd64 && ./linux-amd64 -listener=:${PORT0} -say-string=version1",
+  "cpus": 0.1,
+  "mem": 32,
+  "disk": 0,
+  "instances": 1,
+  "portDefinitions": [
+    {
+      "port": 10001,
+      "protocol": "tcp",
+      "labels": {
+        "VIP_0": "1.2.3.4:5000"
+      }
+    }
+  ],
+  "fetch": [
+    {
+      "uri": "https://s3.amazonaws.com/sargun-mesosphere/linux-amd64",
+      "extract": false,
+      "executable": false,
+      "cache": false
+    }
+  ]
+}
